@@ -1,0 +1,194 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('images/background\ \(2\).png');
+    background-size: cover; 
+    background-position: center; 
+    overflow-x: hidden;
+}
+
+.container {
+    display: flex;
+    flex-direction: column; 
+    min-height: 100vh; 
+}
+
+.navbar {
+    width: 100%;
+    background-color: rgba(139, 69, 19, 0.7);
+    padding: 20px;
+    height: 80px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.navbar h2 {
+    margin: 0;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar ul li {
+    margin: 0 20px;
+}
+
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 0;
+    display: inline-block;
+    transition: transform 0.3s ease, font-weight 0.3s ease; 
+    font-size: 20px;
+}
+
+
+.navbar ul li a:hover {
+    font-weight: bold;
+    transform: scale(1.1); 
+    transform-origin: center; 
+}
+
+h1 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+main {
+    flex-grow: 1; 
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center; 
+    padding: 20px;
+}
+
+h3 {
+    margin-bottom: 20px; 
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    margin: 20px 0; 
+}
+
+#locationInput {
+    padding: 10px;
+    border: 2px solid rgba(139, 69, 19, 0.7);
+    border-radius: 5px; 
+    margin-bottom: 10px; 
+    width: 250px;
+    transition: transform 0.3s ease; 
+}
+
+#locationInput:focus {
+    outline: none; 
+    border-color: #A0522D; 
+}
+
+#getWeatherBtn {
+    padding: 10px 20px;
+    background-color: rgba(139, 69, 19, 0.7);
+    color: white;
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    transition: transform 0.3s ease; 
+}
+
+#getWeatherBtn:hover {
+    background-color: #A0522D; 
+    transform: scale(1.05); 
+}
+
+#locationInput:hover {
+    transform: scale(1.05); 
+}
+
+#temperature {
+    margin-top: 20px; 
+}
+
+#diseaseInfo {
+    display: none; 
+}
+
+footer {
+    text-align: center;
+    padding: px;
+    background-color: #333; 
+    color: white; 
+    position: fixed;
+    width: 100%; 
+    bottom: 0; 
+}
+h3{
+    color: white;
+}
+#diseaseInfo{
+    color: white;
+}
+p{
+    color: white;
+}
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); 
+    z-index: -1; 
+}
+body {
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+#locationInput {
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+#getWeatherBtn {
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+#diseaseInfo {
+    background-color: rgba(139, 69, 19, 0.8); 
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(0.9);
+    opacity: 1;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+.temperature-box {
+    background-color: rgba(139, 69, 19, 0.7); 
+    border: 2px solid rgba(255, 255, 255, 0.7); 
+    border-radius: 10px; 
+    padding: 10px; 
+    margin: 20px 0; 
+    text-align: center; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    color: white; 
+    font-size: 20px;
+    
+}
+

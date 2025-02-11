@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disease Detection</title>
+    <link rel="stylesheet" href="home.css"> 
+    
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <h2>Livestock Disease Detection</h2>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="weather.html">Weather</a></li>
+              <li><a href="hospital.html">Hospital Near Me</a></li>
+            </ul>
+        </div>
+        <div class="search-card">
+            <input type="text" id="searchBar" placeholder="Search for diseases..." />
+        </div>
+        
+        <div id="searchResults">
+            <div id="filteredDiseases"></div>
+        </div>
+        <div id="noDiseaseMessage">No diseases found</div> 
+
+        <h1>Upload Image</h1>
+        
+        <label class="upload-button" for="imageUpload">
+            Upload Image
+            <input type="file" id="imageUpload" style="display: none;" accept="image/*" />
+            <div id="imagePreview" style="display: none;" onclick="document.getElementById('imageUpload').click();"></div>
+        </label>
+
+        <div id="progressContainer" style="display: none;">
+            <div id="progressBar">0%</div>
+        </div>
+        
+        <div id="diseaseInfo" class="disease-info-box" style="display: none;"></div>
+        <div class="disease-list">
+            <h2>Disease Information</h2>
+            
+            <div class="disease-item">
+                <h3>Foot and Mouth Disease</h3>
+                <p>Description: A viral infection that causes sores in the mouth and feet of livestock.</p>
+                <p>Cure: There is no specific cure; management includes vaccination and supportive care.</p>
+                <p>Severity Level: Moderate</p>
+            </div>
+        
+            <div class="disease-item">
+                <h3>Brucellosis</h3>
+                <p>Description: A bacterial infection that can affect cattle, sheep, and goats, leading to abortion in pregnant animals.</p>
+                <p>Cure: Antibiotics can help treat the disease, but prevention through vaccination is key.</p>
+                <p>Severity Level: Severe</p>
+            </div>
+        
+            <div class="disease-item">
+                <h3>Bovine Tuberculosis</h3>
+                <p>Description: A chronic bacterial infection primarily affecting cattle, leading to weight loss and respiratory issues.</p>
+                <p>Cure: Long-term antibiotic treatment and culling of affected animals are necessary.</p>
+                <p>Severity Level: Severe</p>
+            </div>
+        
+            <div class="disease-item">
+                <h3>Johne's Disease</h3>
+                <p>Description: A chronic intestinal infection in cattle caused by Mycobacterium avium subspecies paratuberculosis.</p>
+                <p>Cure: There is no cure; management focuses on reducing the spread and controlling symptoms.</p>
+                <p>Severity Level: Moderate</p>
+            </div>
+        
+            <div class="disease-item">
+                <h3>Avian Influenza</h3>
+                <p>Description: A viral infection in birds that can spread to other species, including humans, causing respiratory distress.</p>
+                <p>Cure: Vaccination and biosecurity measures help control outbreaks.</p>
+                <p>Severity Level: Severe</p>
+            </div>
+        
+            <div class="disease-item">
+                <h3>Porcine Reproductive and Respiratory Syndrome (PRRS)</h3>
+                <p>Description: A viral disease affecting pigs, leading to reproductive failure and respiratory issues.</p>
+                <p>Cure: Supportive care and vaccination help manage the disease.</p>
+                <p>Severity Level: Severe</p>
+            </div>
+        
+            <div class="disease-item">
+                <h3>Chronic Wasting Disease (CWD)</h3>
+                <p>Description: A neurodegenerative disease affecting deer and elk, causing severe weight loss and abnormal behavior.</p>
+                <p>Cure: There is no cure; management includes population control and monitoring.</p>
+                <p>Severity Level: Severe</p>
+            </div>
+        
+            <div class="disease-item">
+                <h3>Scrapie</h3>
+                <p>Description: A fatal neurodegenerative disease in sheep and goats caused by prions.</p>
+                <p>Cure: There is no cure; affected animals must be culled.</p>
+                <p>Severity Level: Severe</p>
+            </div>
+        
+            <div class="disease-item">
+                <h3>Sheep Pox</h3>
+                <p>Description: A viral disease causing skin lesions and respiratory problems in sheep.</p>
+                <p>Cure: Vaccination is the best prevention; supportive care is necessary for affected animals.</p>
+                <p>Severity Level: Moderate</p>
+            </div>
+        
+            <div class="disease-item">
+                <h3>Newcastle Disease</h3>
+                <p>Description: A contagious viral disease affecting birds, causing respiratory distress and nervous system issues.</p>
+                <p>Cure: Vaccination and biosecurity measures help prevent outbreaks.</p>
+                <p>Severity Level: Severe</p>
+            </div>
+        
+            <div class="disease-item">
+                <h3>Contagious Bovine Pleuropneumonia (CBPP)</h3>
+                <p>Description: A severe bacterial respiratory disease in cattle.</p>
+                <p>Cure: Antibiotics can be effective, but prevention through vaccination is crucial.</p>
+                <p>Severity Level: Severe</p>
+            </div>
+        
+            <div class="disease-item">
+                <h3>Enterotoxemia</h3>
+                <p>Description: A bacterial disease caused by overeating or eating high carbohydrate diets, leading to sudden death in livestock.</p>
+                <p>Cure: Vaccination and dietary management can prevent this disease.</p>
+                <p>Severity Level: Severe</p>
+            </div>
+        
+            <div class="disease-item">
+                <h3>Equine Influenza</h3>
+                <p>Description: A contagious viral respiratory disease in horses.</p>
+                <p>Cure: Supportive care and vaccination are used for prevention.</p>
+                <p>Severity Level: Moderate</p>
+            </div>
+        
+            <div class="disease-item">
+                <h3>Canine Parvovirus</h3>
+                <p>Description: A highly contagious viral disease in dogs, primarily affecting puppies.</p>
+                <p>Cure: Supportive treatment and vaccination are crucial for prevention.</p>
+                <p>Severity Level: Severe</p>
+            </div>
+        
+            <div class="disease-item">
+                <h3>Canine Distemper</h3>
+                <p>Description: A viral disease affecting dogs, causing respiratory, gastrointestinal, and neurological issues.</p>
+                <p>Cure: There is no cure; vaccination is the best prevention.</p>
+                <p>Severity Level: Severe</p>
+            </div>
+        
+            <div class="disease-item">
+                <h3>Feline Leukemia Virus (FeLV)</h3>
+                <p>Description: A viral infection that compromises a cat's immune system.</p>
+                <p>Cure: There is no cure; management focuses on supportive care and prevention through vaccination.</p>
+                <p>Severity Level: Severe</p>
+            </div>
+        
+            <div class="disease-item">
+                <h3>Feline Immunodeficiency Virus (FIV)</h3>
+                <p>Description: A viral disease that weakens a cat's immune system, making them more susceptible to other infections.</p>
+                <p>Cure: There is no cure; supportive care is essential.</p>
+                <p>Severity Level: Severe</p>
+            </div>
+        
+            <div class="disease-item">
+                <h3>Anthrax</h3>
+                <p>Description: A bacterial disease that can affect various animals and is zoonotic, posing risks to humans.</p>
+                <p>Cure: Antibiotic treatment is effective if caught early; vaccination is key for prevention.</p>
+                <p>Severity Level: Severe</p>
+            </div>
+        
+            <div class="disease-item">
+                <h3>Leptospirosis</h3>
+                <p>Description: A bacterial disease that affects various animals, including livestock and pets, transmitted through contaminated water.</p>
+                <p>Cure: Antibiotics and supportive care are necessary; vaccination helps prevent infection.</p>
+                <p>Severity Level: Moderate</p>
+            </div>
+            
+            
+            <div class="disease-item">
+                <h3>Blackleg</h3>
+                <p>Description: A bacterial disease caused by Clostridium chauvoei, leading to sudden death in cattle.</p>
+                <p>Cure: Vaccination is effective; antibiotics may help if administered early.</p>
+                <p>Severity Level: Severe</p>
+            </div>
+
+            <div class="disease-item">
+                <h3>Transmissible Gastroenteritis (TGE)</h3>
+                <p>Description: A viral infection affecting pigs, leading to severe diarrhea and dehydration.</p>
+                <p>Cure: Supportive care and vaccination for prevention.</p>
+                <p>Severity Level: Severe</p>
+            </div>
+
+            <div class="disease-item">
+                <h3>Encephalitis</h3>
+                <p>Description: Inflammation of the brain caused by various viruses, affecting livestock's neurological health.</p>
+                <p>Cure: Supportive care; vaccination may prevent some forms.</p>
+                <p>Severity Level: Severe</p>
+            </div>
+
+            <div class="disease-item">
+                <h3>West Nile Virus</h3>
+                <p>Description: A viral infection transmitted by mosquitoes, affecting horses and birds.</p>
+                <p>Cure: Supportive care; vaccination is available for horses.</p>
+                <p>Severity Level: Moderate</p>
+            </div>
+
+            <div class="disease-item">
+                <h3>Blue Tongue</h3>
+                <p>Description: A viral disease affecting sheep, characterized by fever and swelling.</p>
+                <p>Cure: Vaccination is crucial for prevention; supportive care for affected animals.</p>
+                <p>Severity Level: Severe</p>
+            </div>
+        </div>
+    </div>
+    
+<script>
+    function filterDiseases() {
+        const searchInput = document.getElementById('searchBar').value.toLowerCase(); 
+        const diseaseItems = document.querySelectorAll('.disease-item'); 
+        const filteredDiseasesContainer = document.getElementById('filteredDiseases'); 
+        const noDiseaseMessage = document.getElementById('noDiseaseMessage'); 
+        filteredDiseasesContainer.innerHTML = ''; 
+    
+        
+        diseaseItems.forEach(item => {
+            item.style.display = 'none';
+        });
+    
+        
+        if (searchInput === '') {
+            noDiseaseMessage.style.display = 'none'; 
+            return; 
+        }
+    
+        const displayedDiseases = new Set(); 
+        diseaseItems.forEach(item => {
+            const diseaseName = item.querySelector('h3').textContent.toLowerCase(); 
+            if (diseaseName.includes(searchInput)) {
+                if (!displayedDiseases.has(diseaseName)) { 
+                    const clonedItem = item.cloneNode(true); 
+                    filteredDiseasesContainer.appendChild(clonedItem); 
+                    displayedDiseases.add(diseaseName); 
+                    
+                    
+                    clonedItem.style.display = 'block';
+                }
+            }
+        });
+    
+       
+        const searchResultsDiv = document.getElementById('searchResults');
+        if (filteredDiseasesContainer.childNodes.length > 0) {
+            searchResultsDiv.style.display = 'block'; 
+            noDiseaseMessage.style.display = 'none'; 
+        } else {
+            searchResultsDiv.style.display = 'none'; 
+            noDiseaseMessage.style.display = 'block'; 
+        }
+    }
+    
+    
+    document.getElementById('searchBar').addEventListener('input', filterDiseases);
+    
+</script>
+    <script src="home.js"></script>
+</body>
+</html>

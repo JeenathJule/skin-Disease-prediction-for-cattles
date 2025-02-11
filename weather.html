@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Information</title>
+    <link rel="stylesheet" href="weather.css">
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <h2>Livestock Disease Detection</h2>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="weather.html">Weather</a></li>
+                <li><a href="hospital.html">Hospital Near Me</a></li>
+            </ul>
+        </div>
+        <main>
+            <h3>Enter Location for Weather Information</h3>
+            <input type="text" id="locationInput" placeholder="Enter Location" required>
+            <button id="getWeatherBtn">Get Weather</button>
+            <div class="temperature-box" style="display: none;"> 
+                <p id="temperature"></p>
+                <div id="diseaseInfo" style="display: none;"> 
+                    <h4 id="diseaseName"></h4>
+                    <p id="cure"></p>
+                    <p id="commonality"></p>
+                </div>
+            </div>
+        </main>
+        
+    </div>
+    <script src="weather.js"></script> 
+</body>
+</html>

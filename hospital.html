@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livestock Disease Detection</title>
+    <link rel="stylesheet" href="hospital.css"> 
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <h2>Livestock Disease Detection</h2>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="weather.html">Weather</a></li>
+                <li><a href="hospital.html">Hospital Near Me</a></li>
+            </ul>
+        </div>
+        <main>
+            <h3>Select Your City to Find Nearby Veterinary Hospitals</h3>
+            <label for="locationInput">Select Your City:</label>
+            <select id="locationInput">
+                <option value="">--Select City--</option>
+                <option value="Chennai">Chennai (the capital)</option>
+                <option value="Coimbatore">Coimbatore</option>
+                <option value="Madurai">Madurai</option>
+                <option value="Tiruchirappalli">Tiruchirappalli</option>
+                <option value="Salem">Salem</option>
+                <option value="Erode">Erode</option>
+                <option value="Tirunelveli">Tirunelveli</option>
+                <option value="Vellore">Vellore</option>
+                <option value="Thanjavur">Thanjavur</option>
+                <option value="Kanyakumari">Kanyakumari</option>
+                <option value="Dindigul">Dindigul</option>
+                <option value="Nagapattinam">Nagapattinam</option>
+                <option value="Nagercoil">Nagercoil</option>
+                <option value="Kanchipuram">Kanchipuram</option>
+                <option value="Karur">Karur</option>
+                <option value="Tiruvannamalai">Tiruvannamalai</option>
+                <option value="Ramanathapuram">Ramanathapuram</option>
+                <option value="Ariyalur">Ariyalur</option>
+                <option value="Perambalur">Perambalur</option>
+                <option value="Thiruvarur">Thiruvarur</option>
+            </select>
+            
+            <button id="findHospitalsBtn">Find Veterinary Hospitals</button>
+            <div id="hospitalInfo" class="hospital-info"></div>
+        </main>
+        
+    </div>
+    <script src="hospital.js"></script> 
+</body>
+</html>
